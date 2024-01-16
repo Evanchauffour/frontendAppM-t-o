@@ -11,12 +11,13 @@ function App() {
   const [icon, setIcon] = useState('');
   // Initialisation de la date actuelle
   const currentDate = new Date().toLocaleDateString('fr-FR', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+  const serverURL = process.env.SERVER_URL || 'http://localhost:4000';
 
   // Fonction asynchrone pour récupérer les données météorologiques actuelles depuis le backend
   const fetchData = async (city) => {
     try {
       // Envoi des données au backend via une requête POST
-      const response = await fetch('http://localhost:4000/api/getData', {
+      const response = await fetch(`${serverURL}/api/getData`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ function App() {
   // Fonction asynchrone pour récupérer les prévisions météorologiques depuis le backend
   const fetchDataForcast = async (city) => {
     try {
-      const response = await fetch('http://localhost:4000/api/getDataForcast', {
+      const response = await fetch(`${serverURL}/api/getDataForcast`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
