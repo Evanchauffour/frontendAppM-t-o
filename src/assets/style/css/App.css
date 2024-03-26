@@ -26,6 +26,11 @@
   height: 90%;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 50px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .appContainer .contentContainer .content form .searchBar {
   width: 80%;
@@ -169,6 +174,7 @@
   background-color: white;
   font-family: Poppins;
   padding: 20px;
+  max-height: ;
 }
 .appContainer .contentContainer .content .data .otherDay div {
   display: flex;
