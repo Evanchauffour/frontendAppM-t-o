@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './assets/style/scss/App.css';
+import '../src/assets/style/css/App.css';
 
 function App() {
   // Définitions des différentes states de l'application
