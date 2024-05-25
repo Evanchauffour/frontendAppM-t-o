@@ -82,17 +82,17 @@ function App() {
   useEffect(() => {
     if (data && data.weather && data.weather.length > 0) {
       if (data.weather[0].main === 'Clouds') {
-        setBg('../src/assets/img/bgCloud.svg');
-        setIcon('../src/assets/img/cloud.png');
+        setBg('/bgCloud.svg');
+        setIcon('/cloud.png');
       } else if (data.weather[0].main === 'Rain') {
-        setBg('../src/assets/img/bgRaining.jpg');
-        setIcon('../src/assets/img/rain.png');
+        setBg('/bgRaining.jpg');
+        setIcon('/rain.png');
       } else if (data.weather[0].main === 'Clear') {
-        setBg('../src/assets/img/bgSun.svg');
-        setIcon('../src/assets/img/sunIcone.png');
+        setBg('/bgSun.svg');
+        setIcon('/sunIcone.png');
       } else if (data.weather[0].main === 'Snow') {
-        setBg('../src/assets/img/bgSnow.jpg');
-        setIcon('../src/assets/img/snowIcone.png');
+        setBg('/bgSnow.jpg');
+        setIcon('/snowIcone.png');
       }
     }
   }, [data]);
@@ -144,21 +144,21 @@ return (
           <div className="othersInfos">
             <div className="wind_humidity">
               <div>
-                <img src="../src/assets/img/windIcone.png" alt="" />
+                <img src="/windIcone.png" alt="" />
                 <p>{data && data.wind && data.wind.speed} km/h</p>
               </div>
               <div>
-                <img src="../src/assets/img/humidityIcone.png" alt="" />
+                <img src="/humidityIcone.png" alt="" />
                 <p>{data && data.main && data.main.humidity}%</p>
               </div>
             </div>
             <div className="sunSet_sunRize">
               <div>
-                <img src="../src/assets/img/sunriseIcone.png" alt="" />
+                <img src="/sunriseIcone.png" alt="" />
                 <p>{data && data.sys && new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</p>
               </div>
               <div>
-                <img src="../src/assets/img/sunsetIcone.png" alt="" />
+                <img src="/sunsetIcone.png" alt="" />
                 <p>{data && data.sys && new Date(data.sys.sunset * 1000).toLocaleTimeString()}</p>
               </div>
             </div>
