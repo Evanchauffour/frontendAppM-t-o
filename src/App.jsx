@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './assets/style/css/app.css';
+// import './assets/style/scss/app.scss';
 
 function App() {
   // Définitions des différentes states de l'application
@@ -16,7 +16,7 @@ function App() {
   const fetchData = async (city) => {
     try {
       // Envoi des données au backend via une requête POST
-      const response = await fetch('http://localhost:4000/api/getData', {
+      const response = await fetch('https://backendmetep.onrender.com/api/getData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ function App() {
   // Fonction asynchrone pour récupérer les prévisions météorologiques depuis le backend
   const fetchDataForcast = async (city) => {
     try {
-      const response = await fetch('http://localhost:4000/api/getDataForcast', {
+      const response = await fetch('https://backendmetep.onrender.com/api/getDataForcast', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -172,7 +172,6 @@ return (
                   <div>
                     {/* Affichage de la date et icône météorologique des prévisions */}
                     <h4>{day.dt_txt.split(' ')[0]}</h4>
-                    <img src="../src/assets/img/snowIcone.png" alt="" />
                   </div>
                   {/* Affichage de la température prévue pour le jour */}
                   <p>{Math.floor(day.main.temp - 273.15)}°</p>
